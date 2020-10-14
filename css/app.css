@@ -34,10 +34,6 @@
     width: 100%;
 }
 
-.col {
-    width: 33.3333333%;
-}
-
 .card {
     padding: 20px;
     border: 1px solid darkgray;
@@ -52,16 +48,39 @@
     margin-top: 0.5em !important;
     margin-bottom: 0.5em !important;
 }
-.row{
-    display : flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    /* align-items: stretch; */
+
+.row {
+    /* this is a flexbox parent element */
+    display: flex;
+    flex-direction: row; /* arrange children rowwise, i.e. horizontally */ 
+    flex-wrap: wrap; /* allow children to wrap to next lines instead of overflowing on 1 line */
+    justify-content: space-between; /* extra space on a line is spread between items on the line */
+    align-items: stretch; /* stretch each item on a line to occupy entire height of the line */
 }
-.col{
-    flex-basis: 30%;
-    display : flex;
+
+.col {
+    flex-basis: 30%; /* like width for flexbox */
+    
+    /* tis is also made a flexbox parent to have the card stretch to full height using align-items */
+    display: flex;
     flex-direction: row;
-    /* align-items: stretch; */
+    align-items: stretch;
+}
+
+.message {
+    display: none;
+    padding: 1em 2em;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+.message-info {
+    border-color: navy;
+    background-color: lightblue;
+}
+
+.message-error {
+    border-color: crimson;
+    background-color: lightpink;
 }
